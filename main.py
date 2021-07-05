@@ -8,6 +8,10 @@ url = 'https://www.carsensor.net/usedcar/bTO/s219/index{}.html?AR=35%2A33%2A30%2
 browser.get(url)
 #要素が見つからないときは5s待つ
 browser.implicitly_wait(5) 
+
+title = []
+base_price = []
+total_price = []
 while True:
 
     class_name_caset = 'caset js_listTableCassette'
@@ -19,9 +23,6 @@ while True:
     #element_caset = browser.find_element_by_id('VU6242860653_cas')# idなら取得できる
     element_caset = browser.find_elements_by_css_selector('.caset.js_listTableCassette') # 取得できた
 
-    title = []
-    base_price = []
-    total_price = []
     for elem in element_caset:
             element_title = elem.find_element_by_class_name(class_name_bodyTitle).text
             #価格がない場合は０で代用
