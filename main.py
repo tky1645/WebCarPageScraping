@@ -1,5 +1,4 @@
 from selenium import webdriver
-import selenium
 import pandas as pd
 
 browser = webdriver.Chrome('chromedriver.exe')
