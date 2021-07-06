@@ -2,9 +2,15 @@ from selenium import webdriver
 import pandas as pd
 
 browser = webdriver.Chrome('chromedriver.exe')
-#url = 'https://www.carsensor.net/usedcar/index.html?STID=CS210610&AR=35*33*30*32*31&BRDC=&CARC=TO_S219&NINTEI=&CSHOSHO='
-url = 'https://www.carsensor.net/usedcar/bTO/s219/index{}.html?AR=35%2A33%2A30%2A32%2A31'.format(1)
+#url = 'https://www.carsensor.net/usedcar/bTO/s219/index{}.html?AR=35%2A33%2A30%2A32%2A31'.format(1)
+url= 'https://www.carsensor.net/'
 browser.get(url)
+element_form= browser.find_element_by_id('js-fw-input')
+
+key_word='ロードスター'
+element_form.send_keys(key_word)
+browser.find_element_by_class_name('freewordWrap__submit').click()
+
 #要素が見つからないときは5s待つ
 browser.implicitly_wait(5) 
 class_name_caset = 'caset js_listTableCassette'
