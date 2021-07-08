@@ -1,13 +1,16 @@
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import pandas as pd
+options = Options()
+options.add_argument('--headless')
+browser = webdriver.Chrome('chromedriver.exe',options=options)
 
-browser = webdriver.Chrome('chromedriver.exe')
 #url = 'https://www.carsensor.net/usedcar/bTO/s219/index{}.html?AR=35%2A33%2A30%2A32%2A31'.format(1)
 url= 'https://www.carsensor.net/'
 browser.get(url)
 element_form= browser.find_element_by_id('js-fw-input')
 
-key_word='ロードスター'
+key_word='NSX'
 element_form.send_keys(key_word)
 browser.find_element_by_class_name('freewordWrap__submit').click()
 
