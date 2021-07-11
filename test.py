@@ -15,6 +15,7 @@ def Get_elementText_byId(browser, idName):
     text = elem.text
     return text
 
+#test
 browser = webdriver.Chrome('chromedriver.exe')
 #url = 'https://www.carsensor.net/usedcar/index.html?STID=CS210610&AR=35*33*30*32*31&BRDC=&CARC=TO_S219&NINTEI=&CSHOSHO='
 url = 'https://www.google.com/'
