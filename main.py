@@ -56,4 +56,4 @@ while True:
     else:
         break
 
-df.to_csv('test.csv',encoding='utf_8_sig')
+df.to_csv('test.csv',encoding='utf_8_sig',index=None)
