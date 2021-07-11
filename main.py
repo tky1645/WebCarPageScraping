@@ -57,3 +57,12 @@ while True:
         break
 
 df.to_csv('test.csv',encoding='utf_8_sig')
+
+def Get_elementText_byId(browser, idName):
+    
+    #要素が存在しない
+    #複数要素存在するの場合はエラーを返す
+    
+
+    text = browser.find_element_by_id(idName).text
+    return text
