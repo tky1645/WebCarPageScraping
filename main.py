@@ -56,7 +56,6 @@ while True:
     else:
         break
 
-<<<<<<< HEAD
 df.to_csv('test.csv',encoding='utf_8_sig')
 
 def Get_elementText_byId(browser, idName):
@@ -67,6 +66,3 @@ def Get_elementText_byId(browser, idName):
 
     text = browser.find_element_by_id(idName).text
     return text
-=======
-df.to_csv('test.csv',encoding='utf_8_sig',index=None)
->>>>>>> f01ea4e512eaed056830c67e59ffb65ae95c8dec
