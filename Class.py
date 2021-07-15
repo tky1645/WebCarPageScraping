@@ -5,5 +5,5 @@ class NamesGoo:
     idname_serchBtn = 'searchAreaBtn'
 
 
-    keyword = 'CB400SF'
+    keyword = 'SR400'
     
