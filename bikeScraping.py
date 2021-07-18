@@ -6,7 +6,7 @@ import Class as cl
 import WebMethod
 
 #ブラウザをインスタンス化
-browser = WebMethod.Browser_Init(False)
+browser = WebMethod.Browser_Init()
 
 names_Goo = cl.NamesGoo()
 
@@ -17,7 +17,7 @@ element_form= browser.find_element_by_id(names_Goo.idname_input)
 element_form.send_keys(names_Goo.keyword)
 browser.find_element_by_id(names_Goo.idname_serchBtn).click()
 
-#test
+#要素の取得
 title=[]
 distance = []
 year = []
