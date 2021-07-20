@@ -22,6 +22,8 @@ title=[]
 distance = []
 year = []
 total_price = []
+urls = []
+
 
 while True:
 
@@ -29,21 +31,27 @@ while True:
     for l in list:
         price_area=l.find_element_by_css_selector('.clumn_left.clearfix')
         #タイトル
-        elem_title = l.find_element_by_class_name('car_name').text
+        elem_title = l.find_element_by_class_name('car_name')
+        str_title = elem_title.text
+        #URL
+        url = elem_title.find_element_by_tag_name('a').get_attribute('href')
+
         #年式
         detail_middle =  price_area.find_element_by_class_name('clumn_left_middle')
-        elem_year = detail_middle.find_element_by_tag_name('p').text
+        str_year = detail_middle.find_element_by_tag_name('p').text
         #走行距離
         detail_bottom = price_area.find_element_by_class_name('clumn_left_bottom')
-        elem_distance = detail_bottom.find_elements_by_tag_name('p')[1].text
+        str_distance = detail_bottom.find_elements_by_tag_name('p')[1].text
+      
 
 
-        elem_price=l.find_element_by_class_name('totalPrice').text
+        str_price=l.find_element_by_class_name('totalPrice').text
 
-        title.append(elem_title)
-        year.append(elem_year)
-        distance.append(elem_distance)
-        total_price.append(elem_price)
+        title.append(str_title)
+        year.append(str_year)
+        distance.append(str_distance)
+        total_price.append(str_price)
+        urls.append(url)
 
 
     #ページ遷移
@@ -58,6 +66,7 @@ df['title'] = title
 df['total_price'] = total_price
 df['distanece'] = distance
 df['year'] = year
+df['URL'] = urls
 
 
 
