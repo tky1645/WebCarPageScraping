@@ -7,11 +7,9 @@ def Browser_Init(Is_useOption=True):
     if Is_useOption: 
         options = Options()
         options.add_argument('--headless')
+        #Project内のmanage.pyのディレクトリを基準にする
         browser = webdriver.Chrome('carpageScrapingApp\BikeScrapingPackage\chromedriver.exe',options=options)
-        #browser = webdriver.Chrome('chromedriver.exe',options=options)
-        #browser = webdriver.Chrome(executable_path=r'C:\Users\takuya\Documents\Github\WebCarPageScraping\ScrapingProject\CarpageScrapingApp\BikeScrapingPackage\chromedriver.exe',options=options)
     else:
-        #browser = webdriver.Chrome(executable_path=r'.\ScrapingProject\CarpageScrapingApp\BikeScrapingPackage\chromedriver.exe')
         browser = webdriver.Chrome('carpageScrapingApp\BikeScrapingPackage\chromedriver.exe')
     return browser
 

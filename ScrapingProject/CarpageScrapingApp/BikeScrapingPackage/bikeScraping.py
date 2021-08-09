@@ -5,10 +5,17 @@ import pandas as pd
 from . import Classes as cl
 from . import WebMethod
 from django.http import HttpResponse
+from CarpageScrapingApp.models import BikeInfo
+
 
 def ExecScraping(request):
+    model_instance = BikeInfo(title='Beatles Blog', year='All the latest Beatles news.')
+    model_instance.save()
+
+
     bikeInfo =  BikeScraping()
     ExportBikeInfo(bikeInfo)
+
 
     return HttpResponse("Hello, world. You're at the polls index.")
 

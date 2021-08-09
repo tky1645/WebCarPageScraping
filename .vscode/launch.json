@@ -5,11 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Debug Console",
+            "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
-            "console": "internalConsole"
+            "program": "/Users/takuya/Documents/Github/WebCarPageScraping/ScrapingProject/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "runserver",
+            ],
+            "django": true
         }
     ]
 }
