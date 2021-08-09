@@ -4,3 +4,5 @@ migrations/
 ScrapingProject/CarpageScrapingApp/BikeScrapingPackage/__pycache__/bikeScraping.cpython-37.pyc
 ScrapingProject/CarpageScrapingApp/BikeScrapingPackage/__pycache__/WebMethod.cpython-37.pyc
 ScrapingProject/ScrapingProject/__pycache__/settings.cpython-37.pyc
+ScrapingProject/Output.csv
+ScrapingProject/db.sqlite3

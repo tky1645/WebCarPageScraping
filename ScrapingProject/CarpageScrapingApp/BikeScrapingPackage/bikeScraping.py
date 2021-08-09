@@ -9,15 +9,11 @@ from CarpageScrapingApp.models import BikeInfo
 
 
 def ExecScraping(request):
-    model_instance = BikeInfo(title='Beatles Blog', year='All the latest Beatles news.')
-    model_instance.save()
-
-
     bikeInfo =  BikeScraping()
     ExportBikeInfo(bikeInfo)
 
 
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("Scraping Complete.")
 
 
 def BikeScraping():
@@ -90,7 +86,13 @@ def BikeScraping():
 
 
 def ExportBikeInfo(df):
-    df.to_csv('Output.csv',encoding='utf_8_sig')
+    #df.to_csv('Output.csv',encoding='utf_8_sig')
+
+    for row in df.itertuples(name=None):
+
+        model_instance = BikeInfo(title=row[1], year=row[4])
+        model_instance.save()
+
 
 
 
