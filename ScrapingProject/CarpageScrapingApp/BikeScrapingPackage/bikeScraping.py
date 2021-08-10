@@ -83,14 +83,18 @@ def BikeScraping():
     return df
 
 
-
+#DFの情報をDBに登録する。
 def RegistModel(df):
     #df.to_csv('Output.csv',encoding='utf_8_sig')
 
     for row in df.itertuples(name=None):
-        bike_info = BikeInfo(title=row[1], year=row[4]) #TODO modelにクラスにファクトリーを用意すべき？
+        bike_info = ConvertTurple2Bikeinfo(row) #TODO modelにクラスにファクトリーを用意すべき？
         bike_info.CreateorUpdate()
 
+#DFの１レコード分の情報をModelに変換する
+def ConvertTurple2Bikeinfo(tpl):
+    info = BikeInfo(title=tpl[1],price=tpl[2], distance=tpl[3], year=tpl[4], URL=tpl[5])
+    return info
 
 
 
