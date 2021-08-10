@@ -6,3 +6,6 @@ ScrapingProject/CarpageScrapingApp/BikeScrapingPackage/__pycache__/WebMethod.cpy
 ScrapingProject/ScrapingProject/__pycache__/settings.cpython-37.pyc
 ScrapingProject/Output.csv
 ScrapingProject/db.sqlite3
+ScrapingProject/Output.csv
+ScrapingProject/db.sqlite3
+ScrapingProject/.vscode/launch.json

@@ -7,5 +7,12 @@ class BikeInfo(models.Model):
 
     def __str__(self):
         return self.title
+    
+    #登録処理
+    def CreateorUpdate(self):
+        self.save()
+    
+
+
         
 

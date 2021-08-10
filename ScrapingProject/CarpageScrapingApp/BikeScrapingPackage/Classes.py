@@ -4,7 +4,7 @@ class NamesGoo:
     idname_input = 'phrase_input'
     idname_serchBtn = 'searchAreaBtn'
 
-    keyword = 'CB1100'
+    keyword = 'CB1100RS'
     
 class NamesBros:
     url_Top = 'https://www.bikebros.co.jp/'

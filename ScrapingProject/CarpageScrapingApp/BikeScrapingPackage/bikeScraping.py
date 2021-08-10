@@ -10,9 +10,8 @@ from CarpageScrapingApp.models import BikeInfo
 
 def ExecScraping(request):
     bikeInfo =  BikeScraping()
-    ExportBikeInfo(bikeInfo)
-
-
+    RegistModel(bikeInfo)
+    
     return HttpResponse("Scraping Complete.")
 
 
@@ -85,13 +84,12 @@ def BikeScraping():
 
 
 
-def ExportBikeInfo(df):
+def RegistModel(df):
     #df.to_csv('Output.csv',encoding='utf_8_sig')
 
     for row in df.itertuples(name=None):
-
-        model_instance = BikeInfo(title=row[1], year=row[4])
-        model_instance.save()
+        bike_info = BikeInfo(title=row[1], year=row[4]) #TODO modelにクラスにファクトリーを用意すべき？
+        bike_info.CreateorUpdate()
 
 
 
